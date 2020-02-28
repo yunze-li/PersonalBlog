@@ -1,5 +1,6 @@
 ---
 title: Dependency Injection
+date: 2020-02-28
 tags:
   - Android
 ---
@@ -146,18 +147,15 @@ Done! Now enjoy inject any dependency you want!
 
 Now there are still some notes worth mention here:
 
-1. What we using here is just a very brief introduction of Dagger, it has a lot powerful methods and tools that worth to try and play with it. More detail should be found in [here](https://dagger.dev/)
+* What we using here is just a very brief introduction of Dagger, it has a lot powerful methods and tools that worth to try and play with it. More detail should be found in [here](https://dagger.dev/)
 
-2. One of the very useful feature of Dagger is **@Scope** annotation. It can be used in complicated structured project to define different scope for different dependencies to access. This part will be added in future as a follow-up of our DI topic.
+* One of the very useful feature of Dagger is **@Scope** annotation. It can be used in complicated structured project to define different scope for different dependencies to access. This part will be added in future as a follow-up of our DI topic.
 
-3. The main purpose of DI is align with one of the basic [SOLID](https://en.wikipedia.org/wiki/SOLID) principle in softwate development, which is know as [Dependency Inversion Rules](https://en.wikipedia.org/wiki/Dependency_inversion_principle). This principle states:
+* The main purpose of DI is align with one of the basic [SOLID](https://en.wikipedia.org/wiki/SOLID) principle in softwate development, which is know as [Dependency Inversion Rules](https://en.wikipedia.org/wiki/Dependency_inversion_principle). This principle states:
 
-    * High-level Module should not depends on low-level module, both should depend on abstractions (interface);
-    * Abstractions should not depend on details. Details (concrete implementation) should depends on abstraction.
+  * High-level Module should not depends on low-level module, both should depend on abstractions (interface);
+  * Abstractions should not depend on details. Details (concrete implementation) should depends on abstraction.
 
-    We will cover all these principles one by one in future, they are very important in industrial software development world.
+* We will cover all these principles one by one in future, they are very important in industrial software development world.
 
-4. Although there are tons of advantages in DI, but it has its limit or disadvantage for sure. For example, when dependency is missing, it's hard to find out which dependency is missing by checking the build output. So at this time, log is very useful to check.
-
-
-
+* Although there are tons of advantages in DI, but it has its limit or disadvantage for sure. For example, when dependency is missing, it's hard to find out which dependency is missing by checking the build output. So at this time, log is very useful to check.
