@@ -7,8 +7,8 @@ language: en
 nav:
   Posts: /archives
   # Categories: /category
-  # Tags: /tag
-  About: /about
+  Tags: /tags
+  # About: /about
 
 # favicon
 favicon: /favicon.ico
@@ -17,7 +17,7 @@ favicon: /favicon.ico
 nickname: Yunze Li
 
 ### this variable is MarkDown form.
-description: Welcome to my blog, have fun~
+description: Welcome to my tech blog, have fun~
 avatar: /image/icon.jpg
 
 # main menu navigation
@@ -26,9 +26,9 @@ avatar: /image/icon.jpg
 ## Unused key can be commented out.
 links:
   Blog: /archives
-  About: /about
+  # About: /about
   # Category: /category
-  # Tags: /tag
+  Tags: /tags
   # Link:
   # Resume:
   #  Publish:
@@ -84,7 +84,7 @@ page_title_enable: true
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in
 ## http://momentjs.com/docs/#/displaying/format/
-date_format: MMMM D, YYYY
+date_format: YYYY-MM-DD
 time_format: H:mm:ss
 
 # stylesheets loaded in the <head>
