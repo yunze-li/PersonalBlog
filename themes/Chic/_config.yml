@@ -61,6 +61,7 @@ links_icon_enable: true
 # Post page
 ## Post_meta
 post_meta_enable: true
+post_asset_folder: true
 
 post_author_enable: true
 post_date_enable: true
