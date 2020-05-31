@@ -1,8 +1,8 @@
 ---
-title: Clean Architecture Summary
-date: 2020-04-28
-tags: 
-  - Clean Architecture
+title: Clear Architecture Summary
+date: 2020-05-11
+tags:
+    - Clean Architecture
 ---
 
 ## Part II Starting with the Bricks: Programming Paradigms
@@ -39,6 +39,7 @@ Through the use of polymorphism to ***gain absolute control*** over every source
 To better understnad about power of polymorphism. also check **Dependency Inversion Principle** below.
 
 A typical object-oriented programming example:
+
 ```kotlin
 // define Vehicle interface
 interface Vehicle {
@@ -183,7 +184,7 @@ class Employee {
 
 It's easy to understand that `HourReporter`, `PayCalculator`, `EmployeeSaver` classes has higher prority then `Employee` class and we want to avoid code change on them when we need change Employee class. The XML of structure is like:
 
-![clear_architecture_1](/source/_posts/Clean%20Series/clear_architecture_1.jpg)
+{% asset_img clear_architecture_1.jpg %}
 
 Note that an arrow pointing from class A (*Employee*) to class B(*HourReporter*, *PayCalculator*, *EmployeeSaver*) means: **the source code of class A mentionas the name of class B, but class B mentions nothing about class A**. In this XML, `Employee` depends on these three classes, so those three classes is protected from changes in `Employee`.
 
@@ -191,7 +192,8 @@ Note that an arrow pointing from class A (*Employee*) to class B(*HourReporter*,
 
 > Subclass should be substitutable for their base class
 
-A typical example of this principle is **square/rectangle problem**, let's briefly recall the problem first:
+A typical example of this principle is **square/rectangle problem**, let's briefly recall the problem by first:
+
 
 
 
