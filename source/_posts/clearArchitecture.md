@@ -1,5 +1,5 @@
 ---
-title: Clear Architecture Summary
+title: Clear Architecture - Programming Paradigms & Design Principles
 date: 2020-05-11
 tags:
     - Clean Architecture
@@ -182,9 +182,9 @@ class Employee {
 }
 ```
 
-It's easy to understand that `HourReporter`, `PayCalculator`, `EmployeeSaver` classes has higher prority then `Employee` class and we want to avoid code change on them when we need change Employee class. The XML of structure is like:
+It's easy to understand that `HourReporter`, `PayCalculator`, `EmployeeSaver` classes has higher prority then `Employee` class and we want to avoid code change on them when we need change Employee class. The UML of structure is like:
 
-{% asset_img clear_architecture_1.jpg %}
+{% asset_img employee_uml.jpg %}
 
 Note that an arrow pointing from class A (*Employee*) to class B(*HourReporter*, *PayCalculator*, *EmployeeSaver*) means: **the source code of class A mentionas the name of class B, but class B mentions nothing about class A**. In this XML, `Employee` depends on these three classes, so those three classes is protected from changes in `Employee`.
 
@@ -192,16 +192,58 @@ Note that an arrow pointing from class A (*Employee*) to class B(*HourReporter*,
 
 > Subclass should be substitutable for their base class
 
-A typical example of this principle is **square/rectangle problem**, let's briefly recall the problem by first:
+A typical example of this principle is **square/rectangle problem**, let's briefly recall the problem first by UML:
 
+{% asset_img rectangle_square_uml.jpg %}
 
+As common sense, a `Square` should be treated as a special `Rectangle` which means all operations or parameters for a rectangle object should also effect on a square object. Let's see the code block below:
 
+```kotlin
+val rectangle = Rectangle()
+rectangle.setWidth(2)
+rectangle.setHeight(5)
+assert(rectangle.getArea() == 10)
+```
+
+This should work fine and the assertion should pass as well, but when we do the same thing to a `Square` like:
+
+```kotlin
+val square= Square()
+square.setSide(2) // how can width and height change at same time???
+square.setSide(5)
+assert(rectangle.getArea() == 10) // this will failed and area will be 25
+```
+
+The core problem behind this case is : **`square has a feature which rectangle don't: need set both width and height always at same time with same value, they can't be changed separately`**. It may causing a lot problems becuase of this.
 
 ### Interface Segregation Principle (ISP)
 
->
+> No client should be forced to implement methods it doesn't use
 
+When we play with abstract interfaces and implementation, a common problem is we find there are extra methods that the implementation not used at all. The easiest way to handle it is just override it and make it empty. But by doing this, there is a risk that it might be touched by other maintainers or even yourself in future since you may not remember. A good fix on this should be separate it into multiple specific interfaces like:
+
+{% asset_img ISP_fix.jpg %}
+
+In my opinion this is a good way to minimum the risk and separate interface for different class if they not use all of them, but also note that **this might causing a lot interfaces to be generated, this is the trade-off**.
 
 ### Dependency Inversion Principle (DIP)
 
->
+> High-level module shouldn't depend on low-level, but both should only depend on abstraction, not on concretions
+
+This is the most information principle in my opinion and also the hardest one to understand. To understand this, first question is: what is abstraction and why we need it? To answer this, let's see this example UML:
+
+{% asset_img DIP_concrete.jpg %}
+
+This is the concrete implementation for an application with a simple service. `Service` is created by `ServiceFactory` by calling `serviceFactory.createService()`. It works fine but it has several problems:
+
+1. `Application` can access **everthing** inside `Service` and `ServiceFactory`, it including something they don't use (violation of ISP);
+2. Both `Service` and `ServiceFactory` are dependencies of `Application`, which means when their code changed, `Application` will need to re-comple and re-generated everytime (violation of OCP);
+3. If we want to add new type of service in future, both `Application` and `ServiceFactory` need change the code and still hard to extends (violation of OCP again).
+
+So according to what we learned before, here is a better solution for all three points above:
+
+{% asset_img DIP_abstract_factory.jpg %}
+
+As you can see in the solution UML, we make both `ServiceFactory` and `Service` as **Interface** and give them implemnentations for each interface. Note that **implementation is hided from `Application` so it only communicate with interfaces**. Why? Look back into all three problems above and you will find all of them is successfully solved by using **`Interface`**!
+
+Now let's understand the description of this principle with the example: consider `Application` as low-level module and `ServiceFactory`, `Service` as high-level module, `Application` should not depends on `ServiceFactory` and `Service` because of the violation of ISP, OCP and DIP, and they should all depends on the abstraction, which is **`Interface`** in this case. And by using interface, the control flow is successfully inverted from `Application -> ServiceFactory` to `ServiceFactoryImpl -> Application`, same for Service as well. This is how **Inversion** come from.
