@@ -13,6 +13,8 @@ Constructed from **sequence**, **selection** and **iteration** to replace old **
 
 A typical structured programming example:
 
+<!-- more -->
+
 ```kotlin
 // sequence execution
 val sum = 0

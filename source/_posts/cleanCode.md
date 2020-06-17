@@ -12,6 +12,8 @@ tags:
   - using FULLNAME, avoid abbrevation
   - `accountList` > `accounts` > `List`
 
+<!-- more -->
+
 - **Make Meaningful Distinctions**: `ProductInfo` and `ProductData`, `Customer` and `CustomerObject` has no difference at all!
 
 - **Use Pronounceable, Searchable Names**: the length of a name should correspond to the size of its scope

@@ -12,6 +12,8 @@ Before answering this question, a better question to ask might be:
 
 To answer this question, let's take a look at this Kotlin code here:
 
+<!-- more -->
+
 ```kotlin
 class SimpleFeature constructor(
     val businessLogicDelegate: BusinessLogicDelegate,
