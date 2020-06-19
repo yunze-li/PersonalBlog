@@ -1,9 +1,16 @@
 ---
 title: Clear Architecture - Programming Paradigms & Design Principles
 date: 2020-05-11
+thumbnail: /thumbnails/CleanArchitecture.jpg
+toc: true
 tags:
-    - Clean Architecture
+  - Clean Architecture
+  - Reading 
 ---
+
+*Clean Architecture* is one of the series book that written by "Uncle Bob". In last post, I writed a summary of the *Clean Code*. It is super useful for begineers. But as we going deeper, we need take a step back and see the "big picture" -- software architecture, which is all this book talk about.
+
+<!-- more -->
 
 ## Part II Starting with the Bricks: Programming Paradigms
 
@@ -12,8 +19,6 @@ tags:
 Constructed from **sequence**, **selection** and **iteration** to replace old ***goto*** keyword.
 
 A typical structured programming example:
-
-<!-- more -->
 
 ```kotlin
 // sequence execution

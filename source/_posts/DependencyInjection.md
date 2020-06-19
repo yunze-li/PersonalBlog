@@ -1,9 +1,16 @@
 ---
 title: Dependency Injection
 date: 2020-02-28
+thumbnail: /thumbnails/AndroidDagger.png
+toc: true
 tags:
   - Android
 ---
+
+Dependency Injection is a huge topic in Android development and it's very important because it can give us a clean, well-designed, easy-to-change environment no matter we develop new features or implement any testing. So here is some thoughts about DI and an useful framework which helps you do all dirty jobs behind the scene.
+
+<!-- more -->
+
 ## What is Dependency Injection
 
 Before answering this question, a better question to ask might be:
@@ -11,8 +18,6 @@ Before answering this question, a better question to ask might be:
 ### What is **dependency**
 
 To answer this question, let's take a look at this Kotlin code here:
-
-<!-- more -->
 
 ```kotlin
 class SimpleFeature constructor(
@@ -86,7 +91,7 @@ One thing need to mention here is: passing through class's constructor is only o
 
 To use dependencies injection effectively, let me introduce this super-useful library here:
 
-![alt text](https://i1.wp.com/codingsonata.com/wp-content/uploads/2017/12/Android-dagger-2.png?resize=300%2C208 "Dagger")
+{% asset_img AndroidDagger2.png %}
 
 This [Dagger 2](https://dagger.dev/) library are powerful for android application dependency injection, by using this, all we need to do it's define each class's dependency list and the scope to use it. All other stuff will be handled by this library automatically and anonymously. So how to use it? First, we need to have a module class:
 

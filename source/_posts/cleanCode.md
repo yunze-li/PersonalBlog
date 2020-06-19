@@ -1,9 +1,16 @@
 ---
 title: Clean Code Summary
 date: 2020-04-28
+thumbnail: /thumbnails/CleanCode.jpg
+toc: true
 tags: 
   - Clean Code
+  - Reading 
 ---
+
+Recently I read this book <Clean Code> written by Robert C. Martin also known as "Uncle Bob". In this book it talked about general coding principles to make your code "**clean**" and easy to understand. And here is some useful tips and summaries I extracted. 
+
+<!-- more -->
 
 ## Chapter 2 Meangingful Names
 
@@ -11,8 +18,6 @@ tags:
 - **Avoid Disinformation**:
   - using FULLNAME, avoid abbrevation
   - `accountList` > `accounts` > `List`
-
-<!-- more -->
 
 - **Make Meaningful Distinctions**: `ProductInfo` and `ProductData`, `Customer` and `CustomerObject` has no difference at all!
 
@@ -54,8 +59,9 @@ tags:
     ```
   
 - **Output Arguments**
-  - Try not using output argument, if must change state of something, make it change inside it's own
-
+  
+- Try not using output argument, if must change state of something, make it change inside it's own
+  
 - **Prefer Exception to Returning Error Codes**
   - Error code always force caller to deal with it immediately
   - using using *try-catch* block, the code to deal with succeed or error will be separated
