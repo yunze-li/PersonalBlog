@@ -91,7 +91,7 @@ One thing need to mention here is: passing through class's constructor is only o
 
 To use dependencies injection effectively, let me introduce this super-useful library here:
 
-{% asset_img AndroidDagger2.png %}
+![](https://raw.githubusercontent.com/Yunze-Li/BlogPictures/master/BlogPictures/pictures/AndroidDagger2.png?token=AOJCUF3YCAORPIGVWY7V45265W7HE)
 
 This [Dagger 2](https://dagger.dev/) library are powerful for android application dependency injection, by using this, all we need to do it's define each class's dependency list and the scope to use it. All other stuff will be handled by this library automatically and anonymously. So how to use it? First, we need to have a module class:
 

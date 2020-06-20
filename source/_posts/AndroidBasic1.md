@@ -61,7 +61,7 @@ Broadcast Receiver: 这可能是三个组件中比较不常用的一个，也是
 
 这里要稍微说一下BroadcastReceiver与Service的区别，它们都是运行在后台，不带有任何UI的组件。但是Service作为消息的接收方是只能被单独触发的，而不同的BoardcastReceiver却是可以被一起触发的，前提就是它们都注册了同一个event。下面是在看他人的总结介绍时看到的一张很有意思的图：
 
-{% asset_img AndroidComponents.png %}
+![](https://raw.githubusercontent.com/Yunze-Li/BlogPictures/master/BlogPictures/pictures/AndroidComponents.png?token=AOJCUF6JTVXEDNHQWFOX7T265W7AC)
 
 从这张图上来看，有几点值得我们特别注意的：
 

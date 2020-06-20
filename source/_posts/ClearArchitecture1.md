@@ -191,7 +191,7 @@ class Employee {
 
 It's easy to understand that `HourReporter`, `PayCalculator`, `EmployeeSaver` classes has higher prority then `Employee` class and we want to avoid code change on them when we need change Employee class. The UML of structure is like:
 
-{% asset_img employee_uml.jpg %}
+![](https://raw.githubusercontent.com/Yunze-Li/BlogPictures/master/BlogPictures/pictures/employee_uml.jpg?token=AOJCUF3KSFOTDP2ZTUL7N7S65W72I)
 
 Note that an arrow pointing from class A (*Employee*) to class B(*HourReporter*, *PayCalculator*, *EmployeeSaver*) means: **the source code of class A mentionas the name of class B, but class B mentions nothing about class A**. In this XML, `Employee` depends on these three classes, so those three classes is protected from changes in `Employee`.
 
@@ -201,7 +201,7 @@ Note that an arrow pointing from class A (*Employee*) to class B(*HourReporter*,
 
 A typical example of this principle is **square/rectangle problem**, let's briefly recall the problem first by UML:
 
-{% asset_img rectangle_square_uml.jpg %}
+![](https://raw.githubusercontent.com/Yunze-Li/BlogPictures/master/BlogPictures/pictures/rectangle_square_uml.jpg?token=AOJCUF276FUZ7ZXLNXHICRS65W73O)
 
 As common sense, a `Square` should be treated as a special `Rectangle` which means all operations or parameters for a rectangle object should also effect on a square object. Let's see the code block below:
 
@@ -229,7 +229,7 @@ The core problem behind this case is : **`square has a feature which rectangle d
 
 When we play with abstract interfaces and implementation, a common problem is we find there are extra methods that the implementation not used at all. The easiest way to handle it is just override it and make it empty. But by doing this, there is a risk that it might be touched by other maintainers or even yourself in future since you may not remember. A good fix on this should be separate it into multiple specific interfaces like:
 
-{% asset_img ISP_fix.jpg %}
+![](https://raw.githubusercontent.com/Yunze-Li/BlogPictures/master/BlogPictures/pictures/ISP_fix.jpg?token=AOJCUF2KLODQUOIT6PAFFAC65W74Q)
 
 In my opinion this is a good way to minimum the risk and separate interface for different class if they not use all of them, but also note that **this might causing a lot interfaces to be generated, this is the trade-off**.
 
@@ -239,7 +239,7 @@ In my opinion this is a good way to minimum the risk and separate interface for 
 
 This is the most information principle in my opinion and also the hardest one to understand. To understand this, first question is: what is abstraction and why we need it? To answer this, let's see this example UML:
 
-{% asset_img DIP_concrete.jpg %}
+<img src="https://raw.githubusercontent.com/Yunze-Li/BlogPictures/master/BlogPictures/pictures/DIP_concrete.jpg?token=AOJCUF2ORMBUUTVHECG6SWK65W75S"  />
 
 This is the concrete implementation for an application with a simple service. `Service` is created by `ServiceFactory` by calling `serviceFactory.createService()`. It works fine but it has several problems:
 
@@ -249,7 +249,7 @@ This is the concrete implementation for an application with a simple service. `S
 
 So according to what we learned before, here is a better solution for all three points above:
 
-{% asset_img DIP_abstract_factory.jpg %}
+![](https://raw.githubusercontent.com/Yunze-Li/BlogPictures/master/BlogPictures/pictures/DIP_abstract_factory.jpg?token=AOJCUF3HOV4GQEWOL4STCLK65W77I)
 
 As you can see in the solution UML, we make both `ServiceFactory` and `Service` as **Interface** and give them implemnentations for each interface. Note that **implementation is hided from `Application` so it only communicate with interfaces**. Why? Look back into all three problems above and you will find all of them is successfully solved by using **`Interface`**!
 
