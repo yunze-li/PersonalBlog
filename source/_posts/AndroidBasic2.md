@@ -21,8 +21,32 @@ tags:
 在上一次我们说到，AndroidManifest这个文件里定义了所有App所需要的Activity，Service，BoardcastReceiver等等，所以不要忘记在创建完Activity之后，一定要在Manifest里面把它声明好，不然编译时是一定会报错的。
 
 ## Fragment
-在说完Activity之后，我们要说一下Fragment这个重要的component。在各种Android的档案定义里，都会反复出现对于Fragment的定义：A Fragment represents a behavior or a portion of user interface in a FragmentActivity. You can combine multiple fragments in a single activity to build a multi-pane UI and reuse a fragment in multiple activities. 但是我一直就觉得这个解释非常不明确，为什么我们需要用Fragment呢？我个人的理解是：当在一个Activity内有多个单独显示的页面，并且每个页面与用户交互的逻辑都各不相同时，Fragment可以帮助我们减少很多麻烦，将整个Activity的架构变得十分清晰。还是以前面的MyPhoneActivity为例，在这个打电话场景中，可能会分为三个阶段：接收到来电（InComingCall），电话被接通（Calling），通话结束（CallEnded）。根据需求不同，这三个阶段可能会有完全不同的布局，按钮，每个按钮也会有不同的功能，但是它们同属于一个打电话的功能之中（DialingActivity），并且一般来说这三个界面的风格，背景也都基本相同。此时如果我们使用Activity，当然是可以的，这不仅意味着我们需要在各个activity之间传递各种各样的参数，而且整个DialingActivity会变得完全无法使用（因为Activity是不能有inner activity的）。此时就轮到Fragment出场了，我们可以在DialingActivity里定义三个Fragment：InComingCallFragment，CallingFragment以及CallEndedFragment，每个Fragment都可以有自己的model和presenter（也就是都可以使用MVP pattern）而在DialingActivity里，我们可以定义所有包含在其中的Fragment的共同行为。整个的结构大概是这样：
+在说完Activity之后，我们要说一下Fragment这个重要的component。在各种Android的档案定义里，都会反复出现对于Fragment的定义：`A Fragment represents a behavior or a portion of user interface in a FragmentActivity. You can combine multiple fragments in a single activity to build a multi-pane UI and reuse a fragment in multiple activities`. 但是我一直就觉得这个解释非常不明确，为什么我们需要用Fragment呢？我个人的理解是：当在一个Activity内有多个单独显示的页面，并且每个页面与用户交互的逻辑都各不相同时，Fragment可以帮助我们减少很多麻烦，将整个Activity的架构变得十分清晰。还是以前面的MyPhoneActivity为例，在这个打电话场景中，可能会分为三个阶段：接收到来电（InComingCall），电话被接通（Calling），通话结束（CallEnded）。根据需求不同，这三个阶段可能会有完全不同的布局，按钮，每个按钮也会有不同的功能，但是它们同属于一个打电话的功能之中（DialingActivity），并且一般来说这三个界面的风格，背景也都基本相同。此时如果我们使用Activity，当然是可以的，这不仅意味着我们需要在各个activity之间传递各种各样的参数，而且整个DialingActivity会变得完全无法使用（因为Activity是不能有inner activity的）。此时就轮到Fragment出场了，我们可以在DialingActivity里定义三个Fragment：InComingCallFragment，CallingFragment以及CallEndedFragment，每个Fragment都可以有自己的model和presenter（也就是都可以使用MVP pattern）而在DialingActivity里，我们可以定义所有包含在其中的Fragment的共同行为。整个的结构大概是这样：
 
 ![](https://raw.githubusercontent.com/Yunze-Li/BlogPictures/master/BlogPictures/pictures/MyPhoneFragment.png?token=AOJCUFYRFSRJYNGGNMYPWFK65W7M2)
 
 Activity和Fragment都是关于UI部分的重要组件。一般来说对于比较大型的App来说，是需要多个Activity和多个Fragment来展示用户界面的。所以还是要多多设计和使用这些组件来熟悉。
+
+## Dialog
+
+相对于Activity和Fragment, Dialog就简单很多。Dialog主要应用于一些临时的对话框，比如向用户询问是否允许开启一些权限[AlertDialog](https://developer.android.com/reference/android/app/AlertDialog)，让用户选择一个时间[TimePickerDialog](https://developer.android.com/reference/android/app/TimePickerDialog)，或者自定义界面进行选择[DialogFragment](https://developer.android.com/reference/androidx/fragment/app/DialogFragment)。初始化一个简单的Dialog的语法是：
+
+```kotlin
+// 使用Builder class来定义AlertDialog的属性
+val builder = AlertDialog.Builder(this)
+builder.setMessage(R.string.your_dialog_message)
+    .setPositiveButton(
+        R.string.ok,
+        DialogInterface.OnClickListener { dialog, id ->
+            // 定义用户按下OK按钮后的行为
+        })
+    .setNegativeButton(
+        R.string.cancel,
+        DialogInterface.OnClickListener { dialog, id ->
+            // 定义用户按下CANCEL按钮后的行为
+        })
+// 创建一个AlertDIalog实例
+builder.create()             
+```
+
+上面的代码会创建出一个带有两个按钮的对话框，并且根据用户的选择来运行相对应的逻辑。
