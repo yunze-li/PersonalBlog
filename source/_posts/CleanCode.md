@@ -5,7 +5,8 @@ thumbnail: /thumbnails/CleanCode.jpg
 toc: true
 tags: 
   - Clean Code
-  - Reading 
+  - Reading
+  - English
 ---
 
 Recently I read this book <Clean Code> written by Robert C. Martin also known as "Uncle Bob". In this book it talked about general coding principles to make your code "**clean**" and easy to understand. And here is some useful tips and summaries I extracted. 

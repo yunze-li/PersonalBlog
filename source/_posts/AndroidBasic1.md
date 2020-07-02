@@ -1,10 +1,11 @@
 ---
 title: Android开发笔记之基础篇（一）
-date: 2018-09-22 17:35:06
+date: 2020-06-10
 thumbnail: /thumbnails/AndroidBasic.jpg
 toc: true
 tags:
-    - Android
+  - Android
+  - Chinese
 ---
 
 因为最近开始系统地学习Android开发，所以在这里记录一下所学到的Android内容做一个整理。既算是对已学到知识的总结和梳理，也可以检查自己理解中出现的问题，和大家共同讨论一下。因为是第一次写东西，所以有什么不详细，不清楚，不准确的地方，还希望可以指正，我们共同讨论，共同进步。
@@ -116,7 +117,7 @@ tags:
 
 ## 参考链接
 
-[Application Fundamentals](https://developer.android.com/guide/components/fundamentals) - Android 官方说明文档
+[Application Fundamentals](https://developer.android.com/guide/components/fundamentals) - Google Android 官方说明文档
 
 
 

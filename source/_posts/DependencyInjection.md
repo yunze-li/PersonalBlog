@@ -5,6 +5,7 @@ thumbnail: /thumbnails/AndroidDagger.png
 toc: true
 tags:
   - Android
+  - English
 ---
 
 Dependency Injection is a huge topic in Android development and it's very important because it can give us a clean, well-designed, easy-to-change environment no matter we develop new features or implement any testing. So here is some thoughts about DI and an useful framework which helps you do all dirty jobs behind the scene.
