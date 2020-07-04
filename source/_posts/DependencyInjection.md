@@ -3,8 +3,9 @@ title: Dependency Injection
 date: 2020-02-28
 thumbnail: /thumbnails/AndroidDagger.png
 toc: true
-tags:
+categories:
   - Android
+tags:
   - English
 ---
 

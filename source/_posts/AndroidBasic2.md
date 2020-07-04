@@ -3,8 +3,9 @@ title: Android开发笔记之基础篇（二）
 date: 2020-06-16
 thumbnail: /thumbnails/AndroidBasic.jpg
 toc: true
-tags:
+categories:
   - Android
+tags:
   - Chinese
 ---
 
