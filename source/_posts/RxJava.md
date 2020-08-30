@@ -1,5 +1,5 @@
 ---
-title: RxJava基础概念梳理（一）
+title: RxJava基础概念梳理
 date: 2020-08-06
 thumbnail: /thumbnails/RxJava.png
 toc: true
@@ -35,7 +35,7 @@ Observable<Integer> observable = Observable.create(new Observable.OnSubscribe<In
 });
 ```
 
-在这个例子中，observable会依次发送1，2，3三个值，然后声明自己完成发送并结束。这里需要注意的是，如果不执行onCompleted()方法，那么Observable就会被认定**依旧运行**，这个对象也**不会被回收**直至一个onCompleted()或者onError()方法被执行或者observable本身被销毁（会存在**内存泄漏**的问题）。
+在这个例子中，observable会依次发送1，2，3三个值，然后声明自己完成发送并结束。这里需要注意的是，如果不执行onCompleted()方法，那么Observable就会被认定**依旧运行**，这个对象也**不会被回收**直至一个onCompleted()或者onError()方法被执行或者observable本身被销毁（会存在**内存泄漏**的问题）。并且Observable在没有任何observer订阅时，**不会发送任何数据**。
 
 为了更加方便的创建observable，RxJava又为我们提供了一些快速创建的方法，比如创建一个和上边一样的observable，也可以使用如下代码：
 
@@ -47,7 +47,7 @@ Observable.just(1,2,3);
 
 ### Observer
 
-说完Observable，下面就是对应的“观察者”**Observer**了。顾名思义，observer就是数据的“**接收方**”，也就是对于**接收数据进行响应**的对象。相比于Observable，observer的使用方法更为简单，我们只需要创建一个继承Observer接口的实例，然后执行`observable.subscribe()`**订阅方法**并将observer传入即可。例如：
+说完Observable，下面就是对应的“观察者”**Observer**了。顾名思义，observer就是数据的“**接收方**”，也就是对于**接收数据进行响应**的对象。相比于Observable，observer的使用方法更为简单，我们只需要创建一个继承Observer接口：`onNext()`, `onComplete()`和`onError()`的实例，然后执行`observable.subscribe()`**订阅方法**并将observer传入即可。例如：
 
 ```java
 // 创建Observer
@@ -76,11 +76,12 @@ observable.subscribe(observer);
 
 ### Operator
 
-相比于Observable和Observer，Operator更像一个辅助性的“**中间商**”。它负责处理observable传递过来的原始数据，将其**转化成**observer需要的数据类型，再传给订阅的observer。通过这种方式，可以**让数据类型的转换更为方便快捷**，整体的代码也更为清晰明了。常用的一些operator方法包括：
+相比于Observable和Observer，Operator更像一个辅助性的“**中间商**”。它负责处理observable传递过来的原始数据，将其**转化（transform & polish）成**observer需要的数据类型，再传给订阅的observer。通过这种方式，可以**让数据类型的转换更为方便快捷**，整体的代码也更为清晰明了。常用的一些operator方法包括：
 
 - `map()`：对于每个数据都执行一个对应的function，执行结果与原数据**一一对应**并输出；
-- `flatMap()`：对于每个数据都执行一个对应的function，执行结果**全部存入**一个Observable并输出（`flat`意思就在于此）；
+- `flatMap()`：对于每个数据都执行一个对应的function，执行结果**全部存入**一个Observable并输出（`flat`意思就在于此），相当于**一对多**的对应关系；
 - `groupBy()`：对于每个数据源按grouping rule进行mapping，结果**按不同group**存入不同observable，最终输出observable set；
+- `filter`：顾名思义，按照某种条件对其**进行筛选**并将符合筛选条件的数据输出。
 
 所有build-in operator可以在[这里](http://reactivex.io/documentation/operators.html#alphabetical)找到，里面也有十分详尽的对于每个operator作用的介绍，关于Operator更为详细的介绍，以后会专门在写一篇文章，这里不再赘述。
 
@@ -195,9 +196,33 @@ Completable
 		)
 ```
 
+## Subject
+
+前面说到，Operator主要用于对传送数据进行**处理和转化**。但是对于一些实际使用场景来说，operator还是不够灵活。于是RxJava又提供了**Subject**这个类型来让我们更近灵活地进行数据的传输。
+
+> A Subject is a sort of bridge or proxy that is available in some implementations of ReactiveX that acts both as an observer and as an Observable. 
+
+上面是官方文档关于Subject的解释，简单来说Subject就像是一个**连接不同Observable和Observer的”桥梁“**。它既可以作为Observable来发送数据，也可以作为Observer来接收数据。通过Subject，我们可以将任意Observable的数据进行接收，处理，并再次发送给其他Observer。关于Subject，其实RxJava里还有许多其他的类型。这里只列举最为常用的四种类型，其余类型会在以后碰到时补充更新在这里：
+
+### PublishSubject
+
+比较简单的一种Subject类型，**会在subscription之后将所有数据依次发送**。值得注意的是：PublishSubject会**在初始化后**立刻开始发送数据，而不是有Observer subscribe之后发送，所以会存在**observer接收数据不完整**的情况。对于这种情况，ReactiveX给出了两种方式解决：1. 使用`Create()`方法并在初始化前**确认observer已经完成订阅**；2.使用下面要介绍到的**ReplaySubject**。
+
+### BehaviourSubject
+
+相比于PublishSubject，BehaviourSubject最大的特点就是：它会**发送Subscription之前的最后一个数据（last emitted data）以及Subscription之后将所有数据**。除此之外，它和PublishSubject的特点基本一致。
+
+### ReplaySubject
+
+ReplaySubject会**发送Observable产生的全部数据，无论是subscription之前还是之后**。其内部就是用一个`List`动态存储所有接收的数据，并在subscription时发送给Observer。这也就是上面说到的为什么可以使用`ReplaySubject`来确保Observer**接收数据的完整性**。
+
+### AsyncSubject
+
+AsyncSubject**仅会发送Observable产生的最后一个数据，无论是subscription之前还是之后**。
+
 ## 总结
 
-这是关于RxJava的第一篇总结文章，主要介绍了一些比较基础的概念。之后会继续写一些没有涉及到的概念比如Subject，更多Operator的具体用法，以及比较RxJava和RxSwift的一些异同等等。Reactive programming是非常强大的工具，可以让我们更轻松的管理数据流并实现多线程的同步，希望这篇文章中的概念可以对于响应式编程有一个更清晰的理解，谢谢。
+这是关于RxJava的第一篇总结文章，主要介绍了一些比较基础的概念。之后会继续写一些没有涉及到的概念比如Subject，更多Operator的具体用法，以及比较RxJava和RxSwift的一些异同等等。Reactive programming是非常强大的工具，可以让我们更轻松的管理数据流并实现多线程的同步，希望这篇文章中的概念可以对于响应式编程有一个更清晰的理解，happy coding!。
 
 ### 参考文章
 
