@@ -1,5 +1,5 @@
 ---
-title: Android开发笔记之基础篇（一）
+title: Android开发笔记（一）- 四大组件
 date: 2020-06-10
 thumbnail: /thumbnails/AndroidBasic.jpg
 toc: true

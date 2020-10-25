@@ -1,5 +1,5 @@
 ---
-title: Android开发笔记之基础篇（二）
+title: Android开发笔记（二）- UI Components
 date: 2020-06-16
 thumbnail: /thumbnails/AndroidBasic.jpg
 toc: true

@@ -1,5 +1,5 @@
 ---
-title: Android开发笔记之基础篇（四）
+title: Android开发笔记（四）- Layout布局
 date: 2020-07-02
 thumbnail: /thumbnails/AndroidBasic.jpg
 toc: true

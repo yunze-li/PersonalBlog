@@ -1,5 +1,5 @@
 ---
-title: Android开发笔记之基础篇（三）
+title: Android开发笔记（三）- Multi-thread
 date: 2020-06-22
 thumbnail: /thumbnails/AndroidBasic.jpg
 toc: true
