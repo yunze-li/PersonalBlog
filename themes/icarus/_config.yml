@@ -275,26 +275,26 @@ plugins:
     back_to_top: true
     # Baidu Analytics plugin settings
     # https://tongji.baidu.com
-    baidu_analytics:
-        # Baidu Analytics tracking ID
-        tracking_id: 
+    # baidu_analytics:
+    #     # Baidu Analytics tracking ID
+    #     tracking_id: 
     # BuSuanZi site/page view counter
     # https://busuanzi.ibruce.info
     busuanzi: false
     # CNZZ statistics
     # https://www.umeng.com/web
-    cnzz:
-        # CNZZ tracker id
-        id: 
-        # CNZZ website id
-        web_id: 
+    # cnzz:
+    #     # CNZZ tracker id
+    #     id: 
+    #     # CNZZ website id
+    #     web_id: 
     # Enable the lightGallery and Justified Gallery plugins
     gallery: true
     # Google Analytics plugin settings
     # https://analytics.google.com
     google_analytics:
         # Google Analytics tracking ID
-        tracking_id: 
+        tracking_id: G-CCB21QTXP0
     # Hotjar user feedback plugin
     # https://www.hotjar.com/
     hotjar:
