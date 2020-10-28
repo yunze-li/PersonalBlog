@@ -4,10 +4,11 @@ date: 2020-07-09
 thumbnail: /thumbnails/CleanArchitecture.jpg
 toc: true
 categories:
-  - Clean Architecture
+  - 技术博客
+  - Reading
 tags:
   - English
-  - Reading
+  - Clean Architecture
 ---
 
 After we known all principles in class level and component level, finally we reached **Architecutre** level. In this post, we will summarize all architecture level knowedge concepts quickly and finish this book for now, this book has much more useful stuffs that we are not covered, so we will come back and revisit someday after we have more understanding about software architecture.

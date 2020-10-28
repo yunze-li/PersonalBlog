@@ -4,10 +4,11 @@ date: 2020-08-06
 thumbnail: /thumbnails/RxJava.png
 toc: true
 categories:
+  - 技术博客
   - Android
 tags:
-  - RX
   - Chinese
+  - RxJava
 ---
 
 Reactive programming这个概念我在最近的安卓开发中极其频繁的接触到，但是对于从没有接触过的我来说，很多概念还是有点抽象和难以理解。所以这篇博客就来梳理一下在进行了一些了解和学习后，关于所谓“响应式编程”的我自己的理解。这里的例子主要都是应用于RxJava中，但实际上在稍微接触了RxSwift以及RxCocoa之后，我认为它们的基本概念都是相同的，所以了解RxJava之后，RxSwift和RxCocoa就完全不在话下。

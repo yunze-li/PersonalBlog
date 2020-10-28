@@ -4,8 +4,10 @@ date: 2020-07-02
 thumbnail: /thumbnails/AndroidBasic.jpg
 toc: true
 categories:
+  - 技术博客
   - Android
 tags:
+  - Android UI
   - Chinese
 ---
 

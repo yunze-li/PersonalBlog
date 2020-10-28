@@ -7,7 +7,7 @@ logo: /img/logo.png
 # Page metadata configurations
 head:
     # URL or path to the website's icon
-    favicon: /img/favicon.svg
+    favicon: /img/icon.png
     # Open Graph metadata
     # https://hexo.io/docs/helpers.html#open-graph
     open_graph:
@@ -74,8 +74,9 @@ navbar:
     # Naviagtion menu items
     menu:
         Home: /
+        技术博客: /categories/技术博客
+        摄影: /categories/摄影
         Timeline: /archives
-        Categories: /categories
         Tags: /tags
         # About: /about
     # Links to be shown on the right of the navigation bar
@@ -129,7 +130,7 @@ search:
 #     shortname: ''
 # # Donate plugin configurations
 # # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Donation/
-# donates:
+donates:
 #     # Alipay donate button configurations
 #     -
 #         type: alipay
@@ -152,11 +153,11 @@ search:
 #         business: ''
 #         # Currency code
 #         currency_code: USD
-#     # Wechat donate button configurations
-#     -
-#         type: wechat
-#         # Wechat qrcode image URL
-#         qrcode: ''
+    # Wechat donate button configurations
+    -
+        type: wechat
+        # Wechat qrcode image URL
+        qrcode: /img/donate.png
 # Share plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Share/
 # share:

@@ -4,10 +4,11 @@ date: 2020-07-06
 thumbnail: /thumbnails/CleanArchitecture.jpg
 toc: true
 categories:
-  - Clean Architecture
+  - 技术博客
+  - Reading
 tags:
   - English
-  - Reading
+  - Clean Architecture
 ---
 
 In last post we talked about programming paradigms and **SOLID** principles. This is far more than enough to understand about architecture, so today let's continue on "Design Principles" and see more of them that need to follow when thinking like an architect.

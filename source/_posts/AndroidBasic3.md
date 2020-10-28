@@ -4,8 +4,10 @@ date: 2020-06-22
 thumbnail: /thumbnails/AndroidBasic.jpg
 toc: true
 categories:
+  - 技术博客
   - Android
 tags:
+  - Multi-thread
   - Chinese
 ---
 

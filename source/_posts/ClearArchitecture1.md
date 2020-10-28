@@ -4,10 +4,11 @@ date: 2020-05-11
 thumbnail: /thumbnails/CleanArchitecture.jpg
 toc: true
 categories:
-  - Clean Architecture
+  - 技术博客
+  - Reading
 tags:
   - English
-  - Reading
+  - Clean Architecture
 ---
 
 *Clean Architecture* is one of the series book that written by "Uncle Bob". In last post, I writed a summary of the *Clean Code*. It is super useful for begineers. But as we going deeper, we need take a step back and see the "big picture" -- software architecture, which is all this book talk about.
