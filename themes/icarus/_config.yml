@@ -129,13 +129,12 @@ comment:
     type: gitalk
     client_id: d1e9817db24bfc8ad1ab
     client_secret: 1b309c130532fde9d50e07c582a16eaa8014721f
-    repo: PersonalBlog
-    owner: Yunze Li
-    admin:
-        - Yunze Li
+    repo: yunze-li.github.io
+    owner: yunze-li
+    admin: [yunze-li]
     per_page: 20
-    distraction_free_mode: true
-    language: zh-CN
+    # distraction_free_mode: true
+    # language: zh-CN
     # create_issue_manually: false
     # pager_direction: last
     # proxy:
