@@ -124,12 +124,25 @@ search:
     type: insight
 # Comment plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Comment/
-# comment:
-#     type: disqus
-#     # Disqus shortname
-#     shortname: ''
-# # Donate plugin configurations
-# # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Donation/
+comment:
+    # https://github.com/gitalk/gitalk/blob/master/readme-cn.md
+    type: gitalk
+    client_id: d1e9817db24bfc8ad1ab
+    client_secret: 1b309c130532fde9d50e07c582a16eaa8014721f
+    repo: PersonalBlog
+    owner: Yunze Li
+    admin:
+        - Yunze Li
+    per_page: 20
+    distraction_free_mode: true
+    language: zh-CN
+    # create_issue_manually: false
+    # pager_direction: last
+    # proxy:
+    # flip_move_options:
+    # enable_hotkey: true
+# Donate plugin configurations
+# https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Donation/
 donates:
 #     # Alipay donate button configurations
 #     -
