@@ -159,11 +159,11 @@ android {
 
 `-keepattributes[attribute_filter]`：**禁止重命名**class中的参数（attributes），比如使用第三方library时要禁止混淆`Exceptions`， `InnerClasses`和`Signature`；打印stack trace的时候要禁止混淆`SourceFiles`和`LineNumberTable`等；
 
-`-dontusemixedcaseclassnames`：进行混淆时**不同时使用大小写**来重命名；
+`-dontusemixedcaseclassnames`：进行混淆时**不同时使用大小写**来重命名。
 
 
 
-###参考文章
+### 参考文章
 
 [Proguard Offical Document](https://www.guardsquare.com/en/products/proguard/manual/introduction)
 
