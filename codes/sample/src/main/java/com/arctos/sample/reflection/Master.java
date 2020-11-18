@@ -1,14 +1,13 @@
 package com.arctos.sample.reflection;
 
 public class Master extends Student implements Person {
-    @Override
-    public String walk() {
-        return "I'm walking!";
+    public Master(String name) {
+        super(name);
     }
 
     @Override
-    protected String getStudentName() {
-        return "arctos";
+    public String walk() {
+        return "I'm walking!";
     }
 
     @Override
