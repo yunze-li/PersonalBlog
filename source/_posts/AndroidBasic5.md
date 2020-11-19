@@ -18,7 +18,7 @@ tags:
 
 ## Kotlin语言特性
 
-###lateinit VS lazy
+### lateinit VS lazy
 
 首先来看一下使用`lateinit`的代码示例：
 
@@ -64,7 +64,7 @@ class LazyTest {
 
 ## Android SDK相关
 
-###Serializable vs Parcelable
+### Serializable vs Parcelable
 
 `Serializable`是一个**Java Interface**，通过实现这个接口，可以轻松的将一个POJO（plain old java object）**在Activity中进行传递**。实现`Serializable`接口**不需要Override任何方法**，但是因为它使用了**Java Reflection API**所以在编译过程中会**生成很多额外的文件**，有时会触发垃圾回收（garbage collection），浪费系统资源以及设备电量。
 
@@ -76,7 +76,7 @@ class LazyTest {
 
 ## Java语言特性相关
 
-###Overriding vs Overloading
+### Overriding vs Overloading
 
 **TL,DR:**
 
