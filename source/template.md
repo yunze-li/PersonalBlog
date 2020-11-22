@@ -1,14 +1,12 @@
 ---
 title: your name
-date: 2020-11-01 08:03:52
-thumbnail: /thumbnails/ProGuard.png
+date: your date
+thumbnail: /thumbnails/{your thumbnail}
 toc: true
 categories:
-  - 技术博客
+  - Technical
   - Android
 tags:
-  - Chinese
-  - Proguard
 
 ---
 
@@ -18,8 +16,8 @@ tags:
 
 正文
 
+###  
 
-
-###参考文章
+### 参考文章
 
 链接link
