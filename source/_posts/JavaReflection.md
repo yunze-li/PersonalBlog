@@ -1,7 +1,7 @@
 ---
 title: Java Relection 
 date: 2020-11-15 08:03:52
-thumbnail: /thumbnails/JavaReflection.png
+thumbnail: /thumbnails/JavaReflection.jpg
 toc: true
 categories:
   - 技术博客
