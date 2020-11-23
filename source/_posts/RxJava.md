@@ -4,7 +4,7 @@ date: 2020-08-06
 thumbnail: /thumbnails/RxJava.png
 toc: true
 categories:
-  - 技术博客
+  - Technical
   - Android
 tags:
   - Chinese

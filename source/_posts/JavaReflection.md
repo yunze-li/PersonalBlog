@@ -4,7 +4,7 @@ date: 2020-11-15 08:03:52
 thumbnail: /thumbnails/JavaReflection.jpg
 toc: true
 categories:
-  - 技术博客
+  - Technical
   - Java
 tags:
   - English

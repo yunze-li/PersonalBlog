@@ -4,7 +4,7 @@ date: 2020-11-01 08:03:52
 thumbnail: /thumbnails/Lambda.jpg
 toc: true
 categories:
-  - 技术博客
+  - Technical
   - Kotlin
 tags:
   - English

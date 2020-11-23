@@ -4,7 +4,7 @@ date: 2020-04-28
 thumbnail: /thumbnails/CleanCode.jpg
 toc: true
 categories:
-  - 技术博客
+  - Technical
   - Reading
 tags:
   - English

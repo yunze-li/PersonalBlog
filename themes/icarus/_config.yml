@@ -74,7 +74,7 @@ navbar:
     # Naviagtion menu items
     menu:
         Home: /
-        Technical: /categories/技术博客
+        Technical: /categories/Technical
         Photography: /categories/摄影
         Timeline: /archives
         Tags: /tags
@@ -143,33 +143,28 @@ comment:
 # Donate plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Donation/
 donates:
-#     # Alipay donate button configurations
-#     -
-#         type: alipay
-#         # Alipay qrcode image URL
-#         qrcode: ''
-#     # "Buy me a coffee" donate button configurations
-#     -
-#         type: buymeacoffee
-#         # URL to the "Buy me a coffee" page
-#         url: ''
-#     # Patreon donate button configurations
-#     -
-#         type: patreon
-#         # URL to the Patreon page
-#         url: ''
-#     # Paypal donate button configurations
-#     -
-#         type: paypal
-#         # Paypal business ID or email address
-#         business: ''
-#         # Currency code
-#         currency_code: USD
+    # Alipay donate button configurations
+    -
+        type: alipay
+        # Alipay qrcode image URL
+        qrcode: /img/alipay_donate.png
     # Wechat donate button configurations
     -
         type: wechat
         # Wechat qrcode image URL
-        qrcode: /img/donate.png
+        qrcode: /img/wechat_donate.png
+    # # "Buy me a coffee" donate button configurations
+    # -
+    #     type: buymeacoffee
+    #     # URL to the "Buy me a coffee" page
+    #     url: /img/donate.png
+    # # Paypal donate button configurations
+    # -
+    #     type: paypal
+    #     # Paypal business ID or email address
+    #     business: ''
+    #     # Currency code
+    #     currency_code: USD
 # Share plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Share/
 # share:

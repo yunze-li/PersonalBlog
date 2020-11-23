@@ -4,7 +4,7 @@ date: 2020-11-04 08:03:52
 thumbnail: /thumbnails/ProGuard.png
 toc: true
 categories:
-  - 技术博客
+  - Technical
   - Android
 tags:
   - Chinese

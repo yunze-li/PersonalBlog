@@ -4,7 +4,7 @@ date: 2020-02-28
 thumbnail: /thumbnails/AndroidDagger.png
 toc: true
 categories:
-  - 技术博客
+  - Technical
   - Android
 tags:
   - English

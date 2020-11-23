@@ -4,7 +4,7 @@ date: 2020-10-24
 thumbnail: /thumbnails/AndroidBasic.jpg
 toc: true
 categories:
-  - 技术博客
+  - Technical
   - Android
 tags:
   - Kotlin

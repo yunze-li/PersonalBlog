@@ -4,7 +4,7 @@ date: 2020-07-06
 thumbnail: /thumbnails/CleanArchitecture.jpg
 toc: true
 categories:
-  - 技术博客
+  - Technical
   - Reading
 tags:
   - English
