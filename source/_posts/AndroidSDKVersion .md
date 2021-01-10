@@ -1,7 +1,7 @@
 ---
 title: Android SDK Version
 date: 2021-01-07 09:43:05
-thumbnail: /thumbnails/ProGuard.png
+thumbnail: /thumbnails/AndroidSdkVersion.png
 toc: true
 categories:
   - Technical
@@ -9,9 +9,10 @@ categories:
 tags:
   - English
   - Gradle
+  - SDK
 ---
 
-In Android development, I'm always confused about the properties in `build.gradle` like **compileSdkVersion**, **targetSdkVersion**, **minSdkVersion** etc. So here is a short post to compare all of them and clarify the diff.
+In Android development, I'm always confused about the properties in `build.gradle` like **compileSdkVersion**, **targetSdkVersion**, **minSdkVersion** etc. To end up this confusion and make it clear, after I read offical Google docuement and some posts, here is a short conclusion to explain each of them and compare the diff.
 
 <!-- more -->
 
@@ -54,17 +55,23 @@ One more thing need mention here is: if you use the **Android Support library**,
 
 The last version, and also most "interesting" version is `targetSdkVersion`. As we said before, `complieSdkVersion` has no effect on runtime behaviour, but `targetSdkVersion` has, which means OS will decide how it should handle your app in term of OS features. It is **more like a certification of sign off that indicate you have fully tested your app on this version**. For example, when `targetSdkVersion` is higher than 23, Android OS will enable the runtime permission model to your app because **it is the new feature introduced at that version**. So please **make sure you fully tested your app with that version before set `targetSdkVersion` into that number**.
 
-Since `targetSdkVersion` will change your app runtime behaviour, it is suggested to always try to updated this number **after fully test it**. 
+Since `targetSdkVersion` will change your app runtime behaviour, it is suggested to always try to updated this number **after fully test it**. Also **updating to latest SDK should be a higher priority of your app** so you can use all new-introduced features and make your app looks up-to-date.
 
 
 
 ## Compare & Diff
 
+Now after we know each of the version stands for, here we can come to a comparison table between each of them:
+
+<img src="https://raw.githubusercontent.com/Yunze-Li/BlogPictures/master/BlogPictures/pictures/SdkVersion.png" style="zoom:100%;" />
+
+So idealiy, the relationship about these three main versions in an Android app should be: 
+
+> **minSdkVersion ( lowest possible ) <= targetSdkVersion == compileSdkVersion ( latest SDK )**
+
+In this way, your app will always align with latest API changes, looks up-to-date, stable and easy-to-use. Your Audience will thank you for maintaining the SDK version and building this wonderful application!
 
 
-
-
-###  
 
 ### 参考文章
 
