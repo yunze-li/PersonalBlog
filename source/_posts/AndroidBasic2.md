@@ -1,5 +1,5 @@
 ---
-title: Android开发笔记（二）- UI Components
+title: Android开发笔记（二）- UI组件（Activity，Fragment, Dialog）
 date: 2020-06-16
 thumbnail: /thumbnails/AndroidBasic.jpg
 toc: true
