@@ -91,8 +91,11 @@ tags:
 
 `Service`与`IntentService`的区别是一个非常常见的面试题目，其主要区别包括：
 
-- `Service`**运行在主线程**(main thread)，无法处理耗时任务，否则主线程阻塞会出现ANR。`IntentService`可以在**独立的子线程**上运行；
-- `Service`通过**手动调用**`stopService()`来停止并销毁服务。但`IntentService`会**在所有intent被处理完之后自动停止**；
+- `IntentService`是`Service`的一个子类，主要通过一个**work queue**来处理从客户端接收到的intent，适用于处理较长时间的任务；
+- `Service`**运行在主线程**(main thread)，无法处理耗时任务，否则主线程阻塞会出现ANR，而`IntentService`可以在**独立的子线程**上运行；
+- `Service`**可以从任何线程上启动**，而`IntentService`**只能从主线程上启动**；
+- `Service`通过**手动调用`startService()`或`bindService()`**来开启服务，而`IntentService`需**通过`Context.startService(Intent)`**来开启服务；
+- `Service`通过**手动调用`stopService()`来停止并销毁服务**。但`IntentService`会**在所有intent被处理完之后自动停止**；
 - `IntentService`会**自动调用`onBind()`方法**并返回一个null值，并为`onStartCommand()`提供了默认实现，将请求的intent添加进队列中。
 
 ### 参考文章
@@ -105,3 +108,4 @@ tags:
 
 [Android的Service生命周期](https://www.jianshu.com/p/ee224f18a4bd)
 
+[Service vs IntentService in Android](https://blog.mindorks.com/service-vs-intentservice-in-android)
