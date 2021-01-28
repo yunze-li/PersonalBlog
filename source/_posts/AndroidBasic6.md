@@ -1,5 +1,5 @@
 ---
-title: Android开发笔记之基础篇（六）- BroadcastReceiver组件
+title: Android开发笔记（六）- BroadcastReceiver组件
 date: 2021-01-13
 thumbnail: /thumbnails/AndroidBasic.jpg
 toc: true
