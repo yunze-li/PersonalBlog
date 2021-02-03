@@ -1,7 +1,7 @@
 ---
 title: Android Architecture(MVC, MVP and MVVM)
 date: 2021-01-15
-thumbnail: /thumbnails/{your thumbnail}
+thumbnail: /thumbnails/AndroidArchitecture.jpeg
 toc: true
 categories:
   - Technical
